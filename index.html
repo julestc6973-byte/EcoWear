@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- The line above tells the browser that this document is an HTML page -->
+<!-- lang="en" tells browsers and screen readers that the page is written in English -->
+<html lang="en">
+    <head>
+        <!-- charset makes special characters such as € display correctly -->
+        <meta charset="UTF-8">
+        <!-- viewport makes the page fit the width of a phone screen -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- The title appears in the browser tab -->
+        <title>EcoWear - Home</title>
+        <!-- Link to our one external stylesheet, shared by every page -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Link to our one external JavaScript file; defer runs it after the page has loaded -->
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <!-- ===== HEADER: same on every page ===== -->
+        <header>
+            <!-- Our logo, then the name of the brand (h1: the most important title of the page) -->
+            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">The label for independent eco-creators</p>
+        </header>
+
+        <!-- ===== NAVIGATION BAR: the tabs of the site, the same list on every page ===== -->
+        <!-- Each link opens its page in this same browser tab. class="current" marks the page we are on. -->
+        <!-- When you add a page, add its <li> to this list on EVERY page, so that no page is a dead end. -->
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html" class="current">Home</a></li>
+                <li><a href="label.html">Our Label</a></li>
+                <li><a href="scanner.html">AI Scanner</a></li>
+                <li><a href="creators.html">Creators</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="certification.html">Get Certified</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
+        <div class="content">
+
+            <!-- Hero: the first thing a visitor reads -->
+            <article class="hero">
+                <h2>The label that makes independent creators visible</h2>
+                <p>EcoWear certifies the environmental approach of small independent fashion creators, and helps you find them. Every certified creator is checked against public criteria by an independent auditor.</p>
+                <!-- A link styled as a button -->
+                <a href="creators.html" class="button">Meet our certified creators</a>
+                <a href="certification.html" class="button button-light">Get certified</a>
+            </article>
+
+            <!-- How it works: three columns, one for each step -->
+            <h2>How it works</h2>
+            <!-- A row of floating columns (see .row and .column-... in style.css) -->
+            <div class="row">
+                <div class="column-3 card">
+                    <h3>1. A creator applies</h3>
+                    <p>An independent creator tests their approach with our self-assessment, then sends us a file on their materials, workshop, packaging and repairs.</p>
+                </div>
+                <div class="column-3 card">
+                    <h3>2. An auditor checks</h3>
+                    <p>An independent auditor scores six public criteria. With 20 points out of 30, and at least 2 in every criterion, the creator gets the label.</p>
+                </div>
+                <div class="column-3 card">
+                    <h3>3. The label makes them visible</h3>
+                    <p>Certified creators join our directory, our shop and our stories. You can check every label with its certificate number.</p>
+                </div>
+            </div>
+
+            <!-- Look for the label: a photo of the label and a short text, in two columns -->
+            <h2>Look for the label</h2>
+            <div class="row">
+                <div class="column-2">
+                    <!-- Photo of the piece; the class product-image makes it as wide as its card -->
+                    <img src="images/ecowear-label-6.jpg" alt="The EcoWear label sewn inside the collar of a T-shirt" class="product-image">
+                </div>
+                <div class="column-2">
+                    <p>When you see this label inside a collar or on a hang tag, you know that the creator of the piece has been checked by an independent auditor against our six public criteria.</p>
+                    <p>Each certified creator also has a certificate number. Type it on our label page to see their scores and the date of their next audit.</p>
+                    <a href="label.html" class="button">Discover our label</a>
+                </div>
+            </div>
+
+            <!-- Who we are: our story (more than 150 words, as the brief requires) -->
+            <h2>Who we are</h2>
+            <!-- A photo that floats on the right; the text wraps around it (CSS guide, section 4.11) -->
+            <img src="images/workshop.jpg" alt="Independent creators at work around a table in a Lyon workshop" class="image-right" width="360">
+            <p>EcoWear was born in Lyon in 2026. Josh, Jules and Joseph kept meeting talented independent creators who mend, upcycle and make clothes and accessories in small batches, with real care for the planet. Yet next to big brands and their advertising, these creators were almost invisible, and their customers had no simple way to tell a sincere approach from greenwashing.</p>
+            <p>Most existing certifications were designed for large companies: long, expensive and hard to obtain for a workshop of one or two people. So we created EcoWear, a label built for independents. Our six criteria are public, every creator is checked by an independent auditor, and our fees follow the size of each business.</p>
+            <p>The label is only half of the story. Every certified creator joins our directory, sells pieces in our shop and appears in our stories, so that the effort they make for the environment becomes the reason why customers find them. In return, they agree to be checked again every year, because a label is only worth the trust it earns.</p>
+
+            <!-- Our mission, highlighted with a class -->
+            <h2 class="clear">Our mission</h2>
+            <p class="mission">To make the environmental efforts of independent creators credible and visible, so that choosing a responsible piece becomes simple.</p>
+
+            <!-- A button that shows or hides our promises (JavaScript: toggleDetails) -->
+            <button type="button" class="button" onclick="toggleDetails('promises')">Show / hide our promises</button>
+            <!-- Hidden at first: the class hidden is removed by JavaScript when the button is clicked -->
+            <ul id="promises" class="hidden principles">
+                <li>Our six criteria are public, and open to every independent creator who can meet them.</li>
+                <li>Audits are carried out by independent auditors, not by our team.</li>
+                <li>The label is valid for one year, then a new audit is needed.</li>
+                <li>A creator who stops meeting the criteria loses the label.</li>
+                <li>Our fees are made for small workshops.</li>
+            </ul>
+
+            <!-- Our video: once your ad is on YouTube, paste its embed code here (see the HTML guide, section 5.11) -->
+            <!--
+            <h2>EcoWear in one minute</h2>
+            <!-- An embedded frame that shows another web page inside ours -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="EcoWear film"></iframe>
+            -->
+
+            <!-- Contact details (invented for the project) -->
+            <h2>Contact us</h2>
+            <div class="row">
+                <div class="column-2">
+                    <p>
+                        <span class="bold">EcoWear SAS</span><br>
+                        144 Av. Jean Jaurès, 69007 Lyon, France<br>
+                        Email: hello@ecowear.example<br>
+                        Phone: +33 4 00 00 00 00<br>
+                        Open Monday to Friday, 9 am to 6 pm
+                    </p>
+                </div>
+                <div class="column-2">
+                    <p>Each of us answers one kind of question: Jules for our criteria and the audits, Josh for fees and payments, and Joseph for the website and our stories.</p>
+                    <p>Write to the right person on our <a href="contact.html">contact page</a>, or read our <a href="faq.html">FAQ</a> first.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER: same on every page; JavaScript writes the current year in the span ===== -->
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

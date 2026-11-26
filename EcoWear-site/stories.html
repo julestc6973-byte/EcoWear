@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- The head, header, tabs and footer are the same on every page: their comments are in index.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EcoWear - Stories</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">The label for independent eco-creators</p>
+        </header>
+
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="label.html">Our Label</a></li>
+                <li><a href="scanner.html">AI Scanner</a></li>
+                <li><a href="creators.html">Creators</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="certification.html">Get Certified</a></li>
+                <li><a href="stories.html" class="current">Stories</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
+        <div class="content">
+
+            <h2>Creator stories</h2>
+            <p>Meet the independent creators behind the label. Click "Read more" to open a story.</p>
+
+            <!-- Story 1: the end of each story is hidden until the button is clicked (JavaScript: toggleDetails) -->
+            <article class="profile">
+                <h3>Shoreline Studio: the beach as a supplier</h3>
+                <p class="designer">November 2026 · by Joseph</p>
+                <!-- A photo that floats on the right; the text wraps around it (CSS guide, section 4.11) -->
+                <img src="images/cuff.jpg" alt="Bracelets made from recovered copper wire and sea glass" class="image-right" width="220">
+                <p>In Marseille, Léa collects sea glass on the beach and copper wire from electricians' offcuts. Each cuff is wrapped by hand, one at a time.</p>
+                <!-- Clicking runs toggleDetails(), which shows or hides the element whose id is in the brackets -->
+                <button type="button" class="button-small" onclick="toggleDetails('story1')">Read more</button>
+                <div id="story1" class="hidden">
+                    <p>Her audit gave her 5 out of 5 for materials: nothing in her bracelets is new. Her weakest point was transparency, because some of her wire had no known origin. She now keeps a notebook for each batch.</p>
+                    <p>Since she joined the directory, customers from other cities find her when they look for jewelry on EcoWear.</p>
+                </div>
+            </article>
+
+            <!-- Story 2 -->
+            <article class="profile">
+                <h3>Studio Retaille: nothing is thrown away</h3>
+                <p class="designer">November 2026 · by Joseph</p>
+                <img src="images/pouch.jpg" alt="A zipped pouch sewn from printed-cotton offcuts" class="image-right" width="220">
+                <p>In the Croix-Rousse district of Lyon, Karim turns the offcuts of three textile workshops into pouches and bags.</p>
+                <button type="button" class="button-small" onclick="toggleDetails('story2')">Read more</button>
+                <div id="story2" class="hidden">
+                    <p>Every pouch is different, because it depends on the offcuts of the week. His zips come from the stock of a haberdasher that closed down.</p>
+                    <p>The audit asked him to improve his repair offer: he now repairs every pouch for free during its first year.</p>
+                </div>
+            </article>
+
+            <!-- Story 3 -->
+            <article class="profile">
+                <h3>Indigo Second: five pairs of jeans, one jacket</h3>
+                <p class="designer">October 2026 · by Joseph</p>
+                <img src="images/jacket.jpg" alt="A denim jacket made from old jeans" class="image-right" width="220">
+                <p>Camille collects old jeans in Lyon and cuts five pairs to make one jacket. With 26 out of 30, Indigo Second has our best score so far.</p>
+                <button type="button" class="button-small" onclick="toggleDetails('story3')">Read more</button>
+                <div id="story3" class="hidden">
+                    <p>Each jacket has a small label inside that lists the jeans it was made from, so its owner knows its whole story.</p>
+                    <p>Camille now takes back old jackets to repair or rework them, which earned the workshop its points for end of life.</p>
+                </div>
+            </article>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

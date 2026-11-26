@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- The line above tells the browser that this document is an HTML page -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EcoWear - Partners</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <!-- ===== HEADER ===== -->
+        <header>
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">Traced. Checked. Fairly paid.</p>
+        </header>
+
+        <!-- ===== NAVIGATION BAR: the tabs of the site, the same list on every page ===== -->
+        <!-- Each link opens its page in this same browser tab. class="current" marks the page we are on. -->
+        <!-- When you add a page, add its <li> to this list on EVERY page, so that no page is a dead end. -->
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="stamp.html">Our Stamp</a></li>
+                <li><a href="pilot.html">Our Pilot</a></li>
+                <li><a href="partners.html" class="current">Partners</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <!-- ===== 1. INTRODUCTION ===== -->
+            <h2>Become a partner</h2>
+            <p>EcoWear connects producers of materials, creators and workshops with customers who want to know where their pieces come from. You stay the seller and ship your own orders. We select the partners, put you in touch and check each piece before it gets our stamp.</p>
+
+            <!-- ===== 2. WHO WE WORK WITH: three cards, one for each kind of partner ===== -->
+            <h2>Who we work with</h2>
+            <div class="row">
+                <div class="column-3 card">
+                    <img src="images/producer.jpg" alt="Hands sorting recovered material in a workshop" class="product-image">
+                    <h3>Material producers</h3>
+                    <p>You collect, recover or make the material: recovered material, reused fabric or documented textile.</p>
+                    <button type="button" class="button-small" onclick="toggleDetails('ask-producers')">What we ask</button>
+                    <ul id="ask-producers" class="hidden facts">
+                        <li>Documents showing the origin of your material</li>
+                        <li>A batch number for each delivery</li>
+                        <li>A written agreement on your share</li>
+                    </ul>
+                </div>
+                <div class="column-3 card">
+                    <img src="images/creator.jpg" alt="A creator drawing a tote bag next to fabric samples" class="product-image">
+                    <h3>Creators and designers</h3>
+                    <p>You design the pieces. We introduce you to producers whose materials we have documented.</p>
+                    <button type="button" class="button-small" onclick="toggleDetails('ask-creators')">What we ask</button>
+                    <ul id="ask-creators" class="hidden facts">
+                        <li>Your designs and a first sample</li>
+                        <li>The name of the workshop that makes your pieces</li>
+                        <li>A written agreement with your producer</li>
+                    </ul>
+                </div>
+                <div class="column-3 card">
+                    <img src="images/workshop.jpg" alt="A tailor sewing a bag at a sewing machine" class="product-image">
+                    <h3>Workshops</h3>
+                    <p>You cut, sew or assemble the pieces. Your seams and finishes are part of our quality check.</p>
+                    <button type="button" class="button-small" onclick="toggleDetails('ask-workshops')">What we ask</button>
+                    <ul id="ask-workshops" class="hidden facts">
+                        <li>Your address and who works with you</li>
+                        <li>A sample of each new piece</li>
+                        <li>Sizes and care instructions</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== 3. HOW A PARTNERSHIP WORKS: an ordered list, because the steps happen in order ===== -->
+            <h2>How a partnership works</h2>
+            <ol class="journey">
+                <li><span class="bold">You send your file:</span> who you are, which material you use, where it comes from and its batch.</li>
+                <li><span class="bold">We examine a sample:</span> material, seams, finishes, dimensions, comfort and care.</li>
+                <li><span class="bold">We agree on the money in writing:</span> each person's share and our commission.</li>
+                <li><span class="bold">Your piece gets the stamp</span> and goes on sale on EcoWear. You stay the seller and ship your orders.</li>
+                <li><span class="bold">After every sale,</span> we track what is owed and what is paid. If an agreement is not respected, the stamp is suspended.</li>
+            </ol>
+
+            <!-- ===== 4. OUR COMMISSION ===== -->
+            <h2>Our commission</h2>
+            <div class="row">
+                <div class="column-2 card">
+                    <p class="price">15% per sale</p>
+                    <p>Our commission is 15% of the price of each piece sold. We will negotiate it with our first partners during the pilot.</p>
+                </div>
+                <div class="column-2 card">
+                    <p class="price">Example: a €15 bracelet</p>
+                    <p>€2.25 goes to EcoWear and €12.75 to the seller partner, before costs. The seller then shares this amount with the producer, as agreed in writing.</p>
+                </div>
+            </div>
+
+            <!-- ===== 5. SHARE CALCULATOR (JavaScript: splitRevenue) ===== -->
+            <!-- Same id as the carbon calculator, so it gets the same look; an id must only be unique within one page -->
+            <div id="calculator">
+                <h2>Share calculator</h2>
+                <p>See how the price of a piece is shared, then change the numbers to test your own agreement.</p>
+                <form id="splitForm" onsubmit="return splitRevenue()">
+                    <label for="salePrice">Price of the piece (€):</label>
+                    <input type="number" id="salePrice" class="field" min="1" value="15">
+                    <br>
+                    <label for="commissionRate">EcoWear commission (%):</label>
+                    <input type="number" id="commissionRate" class="field" min="0" value="15">
+                    <br>
+                    <label for="producerRate">Producer's share of the seller's part (%):</label>
+                    <input type="number" id="producerRate" class="field" min="0" value="40">
+                    <br>
+                    <input type="submit" value="Share the price" class="button">
+                </form>
+                <!-- JavaScript writes the shares here -->
+                <p id="splitResult" class="message"></p>
+            </div>
+
+            <p class="center"><a href="regpay.html" class="button">Register as a partner</a></p>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

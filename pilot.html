@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!-- The line above tells the browser that this document is an HTML page -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EcoWear - Our Pilot</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <!-- ===== HEADER ===== -->
+        <header>
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">Traced. Checked. Fairly paid.</p>
+        </header>
+
+        <!-- ===== NAVIGATION BAR: the tabs of the site, the same list on every page ===== -->
+        <!-- Each link opens its page in this same browser tab. class="current" marks the page we are on. -->
+        <!-- When you add a page, add its <li> to this list on EVERY page, so that no page is a dead end. -->
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="stamp.html">Our Stamp</a></li>
+                <li><a href="pilot.html" class="current">Our Pilot</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+
+            <!-- ===== 1. INTRODUCTION ===== -->
+            <h2>Our pilot</h2>
+            <p>We are starting small: one piece, one batch and twelve weeks to learn. This page shows the order in which we launch our pieces, the steps of the pilot and what we measure.</p>
+
+            <!-- The pilot in numbers: three blue boxes side by side -->
+            <div class="row">
+                <div class="column-3 stat">
+                    <p class="stat-number">15</p>
+                    <p>buyers interviewed before the launch</p>
+                </div>
+                <div class="column-3 stat">
+                    <p class="stat-number">12 weeks</p>
+                    <p>of testing with our first piece</p>
+                </div>
+                <div class="column-3 stat">
+                    <p class="stat-number">15%</p>
+                    <p>commission, to be negotiated during the pilot</p>
+                </div>
+            </div>
+
+            <!-- ===== 2. LAUNCH ORDER ===== -->
+            <h2>Launch order</h2>
+            <div class="row">
+                <div class="column-3 card">
+                    <h3>1. Recovered-material bracelet</h3>
+                    <p class="designer">Kenya · for gift buyers and shops</p>
+                    <p class="price">€15 working price</p>
+                    <p><span class="bold">Before the stamp:</span> link the material to its batch, then validate the sample and the share between the producer and the creator.</p>
+                </div>
+                <div class="column-3 card">
+                    <h3>2. Reused-textile tote or pouch</h3>
+                    <p class="designer">Kenya or Tanzania · for students and travelers</p>
+                    <p class="price">€29 tote · €19 pouch</p>
+                    <p><span class="bold">Before the stamp:</span> check the fabric, its origin, the workshop, the seams and the amount owed to each person.</p>
+                </div>
+                <div class="column-3 card">
+                    <h3>3. Documented-textile T-shirt</h3>
+                    <p class="designer">Partners being selected · for buyers who want traceability</p>
+                    <p class="price">€35 working price</p>
+                    <p><span class="bold">Before the stamp:</span> check the composition, the place of manufacture, the sizes, the quality and how revenue is shared.</p>
+                </div>
+            </div>
+
+            <!-- ===== 3. THE FIVE STEPS: an ordered list, because they happen in order ===== -->
+            <h2>Five steps</h2>
+            <ol class="journey">
+                <li><span class="bold">Find the people.</span> Identify the producer and the creator of the bracelet.</li>
+                <li><span class="bold">Check the proof.</span> Review their documents and examine a sample.</li>
+                <li><span class="bold">Agree on the amounts.</span> Write down each person's share and our commission.</li>
+                <li><span class="bold">Listen to buyers.</span> Interview 15 buyers about the bracelet, its price and the stamp.</li>
+                <li><span class="bold">Test for 12 weeks.</span> Sell the bracelet and track quality, sales and payments.</li>
+            </ol>
+
+            <!-- ===== 4. WHAT WE MEASURE ===== -->
+            <h2>What we measure for 12 weeks</h2>
+            <ul>
+                <li><span class="bold">Quality:</span> does the piece you receive match the sample we checked?</li>
+                <li><span class="bold">Sales:</span> how many bracelets sell at €15, and to whom?</li>
+                <li><span class="bold">Payments:</span> what is each partner owed, and what has been paid?</li>
+            </ul>
+            <p>At the end of the test, we decide what to change and which piece comes next: the tote or the pouch.</p>
+
+            <!-- ===== 5. BUYER SURVEY (JavaScript: sendSurvey) ===== -->
+            <div class="form-box form-wide">
+                <h2>Be one of our 15 buyers</h2>
+                <p>Three quick questions about our first bracelet. Your answers help us set the right price.</p>
+                <form id="surveyForm" onsubmit="return sendSurvey()">
+                    <label for="svBuy">Would you buy a recovered-material bracelet for €15?</label><br>
+                    <select id="svBuy" class="field">
+                        <option value="">Choose an answer</option>
+                        <option value="yes">Yes</option>
+                        <option value="maybe">Maybe</option>
+                        <option value="no">No</option>
+                    </select><br>
+
+                    <!-- The value of each option is written to fit in the thank-you sentence -->
+                    <label for="svFor">Who would you buy it for?</label><br>
+                    <select id="svFor" class="field">
+                        <option value="">Choose an answer</option>
+                        <option value="for yourself">For myself</option>
+                        <option value="as a gift">As a gift</option>
+                        <option value="for your shop">For my shop</option>
+                    </select><br>
+
+                    <label for="svMatters">What matters most to you?</label><br>
+                    <select id="svMatters" class="field">
+                        <option value="">Choose an answer</option>
+                        <option value="the price">The price</option>
+                        <option value="the design">The design</option>
+                        <option value="knowing where it comes from">Knowing where it comes from</option>
+                        <option value="fair pay for the makers">Fair pay for the makers</option>
+                    </select><br>
+
+                    <input type="submit" value="Send my answers" class="button">
+                </form>
+                <!-- JavaScript writes the thank-you message here -->
+                <p id="surveyResult" class="message"></p>
+            </div>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

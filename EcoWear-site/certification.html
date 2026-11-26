@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- The head, header, tabs and footer are the same on every page: their comments are in index.html -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EcoWear - Get Certified</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">The label for independent eco-creators</p>
+        </header>
+
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="label.html">Our Label</a></li>
+                <li><a href="scanner.html">AI Scanner</a></li>
+                <li><a href="creators.html">Creators</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="certification.html" class="current">Get Certified</a></li>
+                <li><a href="stories.html">Stories</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
+        <div class="content">
+
+            <!-- ===== 1. INTRODUCTION ===== -->
+            <h2>Get certified</h2>
+            <p>EcoWear is made for small independent creators: workshops of one to ten people who design and make their own pieces. Here is how to get our label, what it costs and what it brings you.</p>
+
+            <!-- ===== 2. THE FIVE STEPS: an ordered list, because they happen in order ===== -->
+            <h2>Five steps to the label</h2>
+            <!-- A photo that floats on the right; the text wraps around it (CSS guide, section 4.11) -->
+            <img src="images/ecowear-label-5.jpg" alt="The EcoWear label that a certified creator sews into their pieces" class="image-right">
+            <!-- An ordered list: the steps are numbered -->
+            <ol class="journey">
+                <li><span class="bold">Test yourself.</span> Answer our self-assessment at the bottom of this page.</li>
+                <li><span class="bold">Send your file.</span> Create a creator account, then tell us about your materials, suppliers, workshop, packaging and repairs.</li>
+                <li><span class="bold">Meet the auditor.</span> An independent auditor visits your workshop and scores our six criteria.</li>
+                <li><span class="bold">Get your certificate.</span> With 20 points out of 30, and at least 2 in every criterion, you receive the label and its certificate number.</li>
+                <li><span class="bold">Renew every year.</span> A new audit each year keeps the label valid.</li>
+            </ol>
+
+            <!-- ===== 3. WHAT THE LABEL BRINGS: four small cards ===== -->
+            <h2 class="clear">What the label brings you</h2>
+            <!-- A row of floating columns (see .row and .column-... in style.css) -->
+            <div class="row">
+                <div class="column-4 card">
+                    <h3>Trust</h3>
+                    <p>Print the label on your tags, website and social media, with your certificate number.</p>
+                </div>
+                <div class="column-4 card">
+                    <h3>A place in our directory</h3>
+                    <p>Customers find you by the kind of piece you make, with your scores.</p>
+                </div>
+                <div class="column-4 card">
+                    <h3>A shop window</h3>
+                    <p>Sell your pieces in our shop. You keep shipping them yourself.</p>
+                </div>
+                <div class="column-4 card">
+                    <h3>Your story</h3>
+                    <p>We write about your workshop in our stories and share it with our community.</p>
+                </div>
+            </div>
+
+            <!-- ===== 4. FEES ===== -->
+            <h2>Fees</h2>
+            <div class="row">
+                <div class="column-3 card">
+                    <p class="price">€190</p>
+                    <p>once, for your application and your first audit.</p>
+                </div>
+                <div class="column-3 card">
+                    <p class="price">€12 per month</p>
+                    <p>for the label if you sell less than €50,000 a year, and €24 per month above. The yearly audit is included.</p>
+                </div>
+                <div class="column-3 card">
+                    <p class="price">15% per sale</p>
+                    <p>only on the pieces you sell through our shop.</p>
+                </div>
+            </div>
+
+            <!-- ===== 5. SELF-ASSESSMENT (JavaScript: checkEligibility) ===== -->
+            <div class="form-box form-wide">
+                <h2>Self-assessment</h2>
+                <p>For each criterion, choose the answer that describes your workshop today. The value of each answer is its number of points.</p>
+                <form id="selfForm" onsubmit="return checkEligibility()">
+                    <label for="crMaterials">1. Materials: recycled, upcycled, deadstock or organic</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crMaterials" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <label for="crProduction">2. Production: small batches, in workshops I can name</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crProduction" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <label for="crTransparency">3. Transparency: my suppliers and the origin of my materials are written down</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crTransparency" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <label for="crTransport">4. Transport and packaging: no air freight, no plastic</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crTransport" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <label for="crDurability">5. Durability and repair: care advice and a repair service</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crDurability" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <label for="crEndOfLife">6. End of life: offcuts reused, pieces taken back</label><br>
+                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
+                    <select id="crEndOfLife" class="field">
+                        <option value="0">Not yet</option>
+                        <option value="2">For some of my pieces</option>
+                        <option value="4">For most of my pieces</option>
+                        <option value="5">For all my pieces</option>
+                    </select><br>
+
+                    <input type="submit" value="See my score" class="button">
+                </form>
+                <!-- JavaScript writes the score here -->
+                <p id="eligibilityResult" class="message"></p>
+            </div>
+
+            <!-- A link styled as a button -->
+            <p class="center"><a href="regpay.html" class="button">Create a creator account</a></p>
+        </div>
+
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

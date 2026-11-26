@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- The line above tells the browser that this document is an HTML page -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EcoWear - Journal</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+    <body>
+        <!-- ===== HEADER ===== -->
+        <header>
+            <h1 class="logo">EcoWear</h1>
+            <p class="tagline">Traced. Checked. Fairly paid.</p>
+        </header>
+
+        <!-- ===== NAVIGATION BAR: the tabs of the site, the same list on every page ===== -->
+        <!-- Each link opens its page in this same browser tab. class="current" marks the page we are on. -->
+        <!-- When you add a page, add its <li> to this list on EVERY page, so that no page is a dead end. -->
+        <div class="nav-bar">
+            <ul id="navigation">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="stamp.html">Our Stamp</a></li>
+                <li><a href="pilot.html">Our Pilot</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="journal.html" class="current">Journal</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="regpay.html">Register &amp; Pay</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Journal</h2>
+            <p>News from our pilot. Click "Read more" to open an article.</p>
+
+            <!-- Article 1: the end of each article is hidden until the button is clicked (JavaScript: toggleDetails) -->
+            <article class="profile">
+                <h3>Why our first piece is a €15 bracelet</h3>
+                <p class="designer">October 2026 · by Josh</p>
+                <img src="images/bracelet.jpg" alt="Bracelet made from recovered material" class="image-right" width="220">
+                <p>A bracelet is small, light and easy to give. That makes it the right piece to test our stamp from start to finish.</p>
+                <button type="button" class="button-small" onclick="toggleDetails('article1')">Read more</button>
+                <div id="article1" class="hidden">
+                    <p>Its supply chain is short: one producer of recovered material and one creator's workshop in Kenya. That means fewer people to identify, one batch to link to the material and one sample to check.</p>
+                    <p>€15 is a working price. During the pilot, we will ask buyers whether it feels right, and we will check that, after our 15% commission, the seller partner and the producer earn what they agreed.</p>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="profile">
+                <h3>What our stamp checks, and what it does not</h3>
+                <p class="designer">October 2026 · by Jules</p>
+                <p>Our stamp is an internal check, not an independent certification. Here is exactly what it covers.</p>
+                <button type="button" class="button-small" onclick="toggleDetails('article2')">Read more</button>
+                <div id="article2" class="hidden">
+                    <p>Before a piece gets the stamp, we identify the producer, the creator, the workshop, the material, its origin and its batch, with documents to prove it. We examine a sample: material, seams, finishes, dimensions, comfort and care. And we agree in writing on each person's share and on our commission.</p>
+                    <p>After every sale, we track what is owed and what is paid. If an agreement is not respected, the stamp is suspended. What the stamp does not do: it does not replace an official label, such as an organic certification, and we never present it as one.</p>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="profile">
+                <h3>Twelve weeks to learn</h3>
+                <p class="designer">October 2026 · by Joseph</p>
+                <p>Our pilot lasts twelve weeks. We will measure three things: quality, sales and payments.</p>
+                <button type="button" class="button-small" onclick="toggleDetails('article3')">Read more</button>
+                <div id="article3" class="hidden">
+                    <p>Before the launch, we interview 15 buyers about the bracelet, its price and what they expect from a stamp. You can be one of them on our <a href="pilot.html">pilot page</a>.</p>
+                    <p>During the test, Josh tracks prices and payments, Jules checks producers and traceability, and Joseph keeps the product sheets and the catalog up to date. At the end, we decide what to change and whether the tote or the pouch comes next.</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer>
+            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
+        </footer>
+    </body>
+</html>

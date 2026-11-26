@@ -1,0 +1,897 @@
+/* =====================================================================
+   EcoWear - style.css
+   One external stylesheet shared by the 11 pages of the site.
+   EcoWear is a certification label for small independent creators.
+   Theme: bold and engaged, like a campaign poster: night blue with a gold accent
+   (no white). Shapes: square corners everywhere.
+   Signature: a diagonal header, half gold, half night blue (section 15).
+   Fonts: Arial Black for titles, Arial for text (web-safe fonts, CSS guide
+   section 4.6.4), with fallbacks for computers that do not have them.
+   Blues: black blue #030814 (tabs strip, hero, number boxes, footer), night blue
+   #0a1428 (page), #111e38 (cards and forms), #172847 (tabs and form fields),
+   #263a5e (thin lines), #1d3f73 and #132d55 (dark buttons and tags).
+   Light greys: #dbe2ee (text), #eff3f9 (titles), #8e9bb5 (small text).
+   Gold: #f5b700 (accent: header, buttons, links, lines), #d99f00 (hover),
+   #ffd666 (big numbers). Muted red #e09a88 (errors).
+   ===================================================================== */
+
+
+/* ---------- 1. PAGE BASICS ---------- */
+
+/* body: the whole visible page */
+body {
+    margin: 0;
+    background-color: #0a1428;
+    color: #dbe2ee;
+    font-family: Arial, Helvetica, sans-serif;
+    /* color-scheme: dark asks the browser to draw its own controls (file button, radio buttons,
+       drop-down lists) in dark colors, so no white box appears on the page */
+    color-scheme: dark;
+}
+
+/* General links (the navigation bar has its own rules further down) */
+a:link {
+    color: #f5b700;
+}
+
+/* Visited links keep the same gold, so the page stays calm */
+a:visited {
+    color: #f5b700;
+}
+
+/* Links turn pale gold when the mouse is over them */
+a:hover {
+    color: #ffd666;
+}
+
+/* Pale gold at the moment a link is clicked */
+a:active {
+    color: #ffd666;
+}
+
+/* Titles use Franklin Gothic Medium, a strong web-safe font. It is already thick,
+   so font-weight: normal stops the browser from making it heavier. */
+h2 {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 1.9rem;
+    color: #eff3f9;
+    margin-top: 35px;
+}
+
+/* Sub-titles (h3) are in gold, inside cards and forms */
+h3 {
+    font-size: 1.2rem;
+    color: #f5b700;
+}
+
+
+/* ---------- 2. HEADER ---------- */
+
+/* A gradient background, as shown in the CSS guide (section 4.4) */
+header {
+    background-image: linear-gradient(135deg, #030814, #132d55);
+    background-color: #030814;
+    color: #eff3f9;
+    text-align: center;
+    padding: 30px 20px 20px 20px;
+}
+
+/* Our logo, on its square of recycled card: display: block puts it on its own line,
+   and margin: 0 auto centers it above the name */
+.logo-image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px auto;
+    border: 2px solid #1d3f73;
+}
+
+/* The name EcoWear at the top of every page, in our title font */
+.logo {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-weight: normal;
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* The short sentence under the name, in italics */
+.tagline {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin: 5px 0 0 0;
+}
+
+
+/* ---------- 3. NAVIGATION BAR: THE TABS OF THE SITE (CSS guide, section 4.10) ---------- */
+
+/* Every page has the same list of links, so a visitor can open any page from any
+   other page, always in the same browser tab. Each link is drawn as a tab, and the
+   tab of the page we are on takes the color of the page. */
+
+/* The strip behind the tabs spans the full width of the page */
+.nav-bar {
+    background-color: #030814;
+    padding-top: 10px;
+}
+
+/* The list itself: no bullets and no default spacing (CSS guide, Figure 48).
+   It has the same width as the content, so the tabs line up with the text below.
+   overflow: hidden makes the list wrap around its floating items. */
+#navigation {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1000px;
+    overflow: hidden;
+}
+
+/* float: left puts the tabs side by side (CSS guide, section 4.10.3).
+   There is no fixed width: each tab is as wide as its text, so when you add pages
+   the new tabs simply follow on the right, or on a second line on a small screen. */
+#navigation li {
+    float: left;
+    margin: 6px 6px 0 0;
+}
+
+/* display: block makes the whole tab clickable, not only the text.
+   The tabs keep square corners, like every shape on the site. */
+#navigation a {
+    display: block;
+    padding: 12px 9px;
+    font-size: 0.95rem;
+    background-color: #172847;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* unvisited link */
+#navigation a:link {
+    color: #dbe2ee;
+}
+
+/* link that has been clicked on */
+#navigation a:visited {
+    color: #dbe2ee;
+}
+
+/* mouse over the tab (a:hover must come after a:link and a:visited) */
+#navigation a:hover {
+    background-color: #1d3f73;
+    color: #eff3f9;
+}
+
+/* tab while it is being clicked (a:active must come after a:hover) */
+#navigation a:active {
+    background-color: #132d55;
+}
+
+/* The tab of the page we are on (class="current" in the HTML).
+   It has the background color of the page, so it looks joined to the page below. */
+#navigation .current {
+    background-color: #0a1428;
+}
+
+/* The text of the current tab is gold */
+#navigation .current:link {
+    color: #f5b700;
+}
+
+/* Same color once the page has been visited */
+#navigation .current:visited {
+    color: #f5b700;
+}
+
+/* The current tab does not change color under the mouse */
+#navigation .current:hover {
+    background-color: #0a1428;
+    color: #ffd666;
+}
+
+
+/* ---------- 4. MAIN CONTENT AREA ---------- */
+
+/* max-width and automatic side margins center the content on large screens */
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px 20px 30px 20px;
+}
+
+/* Hero block at the top of the home page: a dark panel on the night blue page */
+.hero {
+    background-color: #030814;
+    text-align: center;
+    padding: 25px 4%;
+    margin-top: 25px;
+}
+
+/* The big title of the hero block */
+.hero h2 {
+    margin-top: 0;
+    font-size: 2.2rem;
+    color: #eff3f9;
+}
+
+/* The text of the hero block, in muted grey */
+.hero p {
+    font-size: 1.15rem;
+    color: #8e9bb5;
+}
+
+
+/* ---------- 5. BUTTONS ---------- */
+
+/* Used on links (a), buttons and submit inputs */
+.button {
+    background-color: #1d3f73;
+    color: #eff3f9;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 18px;
+    margin: 5px;
+    border: 2px solid #1d3f73;
+}
+
+/* Links styled as buttons need these pseudo-classes to keep their light text */
+.button:link {
+    color: #eff3f9;
+}
+
+/* Same color once the link has been visited */
+.button:visited {
+    color: #eff3f9;
+}
+
+/* A darker blue when the mouse is over the button */
+.button:hover {
+    background-color: #132d55;
+    border: 2px solid #132d55;
+    color: #eff3f9;
+}
+
+/* A dark version of the button, with a blue border */
+.button-light {
+    background-color: #172847;
+    color: #ffd666;
+    border: 2px solid #1d3f73;
+}
+
+/* Pale gold text for the dark button */
+.button-light:link {
+    color: #ffd666;
+}
+
+/* Same color once the link has been visited */
+.button-light:visited {
+    color: #ffd666;
+}
+
+/* The dark button turns deep blue under the mouse */
+.button-light:hover {
+    background-color: #132d55;
+    border: 2px solid #1d3f73;
+    color: #eff3f9;
+}
+
+/* In the hero, the two buttons are stacked and centered */
+.hero .button {
+    display: block;
+    width: 260px;
+    margin: 10px auto;
+}
+
+/* Small buttons inside cards ("Quick facts", "More about...") */
+.button-small {
+    background-color: #132d55;
+    color: #eff3f9;
+    font-size: 0.9rem;
+    padding: 7px 12px;
+    margin-bottom: 8px;
+    border: none;
+}
+
+/* The small button changes colour under the mouse */
+.button-small:hover {
+    background-color: #1d3f73;
+}
+
+
+/* ---------- 6. COLUMNS AND CARDS ---------- */
+
+/* A row holds floating columns; overflow: hidden makes it wrap around them */
+.row {
+    overflow: hidden;
+}
+
+/* Columns float side by side. Width + left/right padding + left/right margin
+   add up to about 100% divided by the number of columns. */
+.column-2 {
+    float: left;
+    width: 45.9%;
+    padding: 15px 1.5%;
+    margin: 0 0.5% 15px 0.5%;
+}
+
+/* Three columns side by side: 3 x (29.33% + 2 x 1.5% padding + 2 x 0.5% margin) = 100% */
+.column-3 {
+    float: left;
+    width: 29.3%;
+    padding: 15px 1.5%;
+    margin: 0 0.5% 15px 0.5%;
+}
+
+/* Four columns side by side, for small cards */
+.column-4 {
+    float: left;
+    width: 20.9%;
+    padding: 15px 1.5%;
+    margin: 0 0.5% 15px 0.5%;
+}
+
+/* A dark blue card on the night blue page, with a gold line on top.
+   A border on the top only adds height, so the columns keep their width. */
+.card {
+    background-color: #111e38;
+    border-top: 3px solid #1d3f73;
+}
+
+/* An image floating to the right of the text (CSS guide, section 4.11) */
+.image-right {
+    float: right;
+    width: 40%;
+    margin: 0 0 15px 20px;
+}
+
+/* clear: both moves an element below any floating element */
+.clear {
+    clear: both;
+}
+
+/* Centers the text of an element */
+.center {
+    text-align: center;
+}
+
+/* Writes a few words in bold inside a sentence */
+.bold {
+    font-weight: bold;
+}
+
+
+/* ---------- 7. HOME PAGE ---------- */
+
+.mission {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #f5b700;
+    border-left: 5px solid #1d3f73;
+    padding-left: 15px;
+}
+
+/* The list of our promises, shown or hidden by a button on the home page */
+.principles {
+    background-color: #111e38;
+    padding: 15px 15px 15px 35px;
+}
+
+/* The embedded Google Map */
+.map {
+    width: 100%;
+    border: 0;
+}
+
+
+/* ---------- 8. PRODUCTS PAGE ---------- */
+
+.product-image {
+    width: 100%;
+}
+
+/* The name of the creator under each product, in small grey italics */
+.designer {
+    font-style: italic;
+    color: #8e9bb5;
+    margin: 0;
+}
+
+/* The price of each piece, in bold gold */
+.price {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #ffd666;
+    margin: 5px 0;
+}
+
+/* The estimated carbon footprint of each piece */
+.footprint {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #f5b700;
+}
+
+/* Status of the label on each card: a small colored label.
+   A span stays on one line with its text, so the label is only as wide as its words. */
+.tag {
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 4px 8px;
+}
+
+/* Blue tag with gold text: the creator holds a valid label */
+.tag-certified {
+    background-color: #132d55;
+    color: #ffd666;
+}
+
+/* Grey tag: the creator is being audited */
+.tag-audit {
+    background-color: #172847;
+    color: #dbe2ee;
+}
+
+/* Muted red tag: the label is suspended */
+.tag-suspended {
+    background-color: #3a2622;
+    color: #e09a88;
+}
+
+/* The list of facts that appears when "Quick facts" is clicked */
+.facts {
+    background-color: #0a1428;
+    padding: 10px 10px 10px 30px;
+    font-size: 0.9rem;
+}
+
+/* Stamp files (products page) and journal articles.
+   overflow: hidden makes the box wrap around a floating image inside it. */
+.profile {
+    background-color: #111e38;
+    border-left: 6px solid #1d3f73;
+    padding: 10px 25px 15px 25px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Space between the steps of an ordered list */
+.journey li {
+    margin-bottom: 8px;
+}
+
+/* The score line at the bottom of each creator profile, with a thin line above it */
+.profile-summary {
+    font-weight: bold;
+    color: #f5b700;
+    border-top: 1px solid #263a5e;
+    padding-top: 10px;
+}
+
+/* The calculator box: an id, because there is only one per page.
+   The products page (carbon) and the partners page (shares) both use it. */
+#calculator {
+    background-color: #111e38;
+    border: 2px solid #1d3f73;
+    padding: 10px 25px 20px 25px;
+    max-width: 600px;
+    margin: 35px auto 15px auto;
+}
+
+/* The title of the calculator box */
+#calculator h2 {
+    margin-top: 10px;
+}
+
+/* The answer of the calculator, written by JavaScript */
+#result {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* "How we calculate" box below the calculator */
+.method {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+}
+
+
+/* ---------- 9. LABEL, CREATORS, CERTIFICATION, TEAM AND STORIES PAGES ---------- */
+
+/* The caption under a photo of the label */
+.caption {
+    text-align: center;
+    font-style: italic;
+    color: #8e9bb5;
+    margin-top: 8px;
+}
+
+/* Our rules, highlighted with a gold border on the left */
+.rule {
+    background-color: #111e38;
+    border-left: 6px solid #1d3f73;
+    padding: 5px 25px;
+}
+
+/* Square team photos */
+.portrait {
+    width: 150px;
+    height: 150px;
+}
+
+/* Dark boxes with a big gold number (label page) */
+.stat {
+    background-color: #030814;
+    color: #dbe2ee;
+    text-align: center;
+}
+
+/* No extra space around the text of a number box */
+.stat p {
+    margin: 5px 0;
+}
+
+/* The big number at the top of each number box */
+.stat-number {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffd666;
+}
+
+
+/* The score of a creator, out of 30 */
+.score {
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #f5b700;
+    margin: 5px 0;
+}
+
+
+/* ---------- 10. FAQ PAGE ---------- */
+
+.faq {
+    max-width: 850px;
+}
+
+/* Each question is a full-width button */
+.question {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: #111e38;
+    color: #ffd666;
+    font-size: 1.05rem;
+    font-weight: bold;
+    padding: 14px 16px;
+    margin-top: 10px;
+    border: 1px solid #263a5e;
+}
+
+/* A question changes colour when the mouse is over it, to show that it can be clicked */
+.question:hover {
+    background-color: #1d3f73;
+    color: #eff3f9;
+}
+
+/* The answer under each question, hidden until the question is clicked */
+.answer {
+    background-color: #0a1428;
+    border-left: 4px solid #1d3f73;
+    padding: 10px 16px;
+    margin: 0;
+}
+
+
+/* ---------- 11. FORMS ---------- */
+
+.form-box {
+    background-color: #111e38;
+    padding: 15px 1.5%;
+    margin-top: 30px;
+}
+
+/* On the FAQ page the form box is not in a column, so it gets more inner space */
+.form-wide {
+    padding: 15px 25px;
+}
+
+/* The text that names each field of a form, in bold */
+label {
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+
+/* Text boxes, number boxes, password boxes, drop-down lists and message boxes
+   all have the class "field" in the HTML */
+.field {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0 12px 0;
+    border: 1px solid #263a5e;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #172847;
+    color: #dbe2ee;
+}
+
+/* Messages written by JavaScript after a form is submitted */
+.message {
+    font-weight: bold;
+}
+
+/* Warning box on the payment form: no real payment is taken */
+.demo-note {
+    background-color: #3a2622;
+    color: #e09a88;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+}
+
+
+/* ---------- 12. FOOTER ---------- */
+
+footer {
+    clear: both;
+    background-color: #030814;
+    color: #8e9bb5;
+    border-top: 3px solid #1d3f73;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* The text of the footer */
+footer p {
+    margin: 0;
+}
+
+
+/* ---------- 13. SHOW AND HIDE (JS guide, section 1.6) ---------- */
+
+/* Kept at the end so it wins over the rules above.
+   JavaScript adds or removes this class with classList.toggle("hidden"). */
+.hidden {
+    display: none;
+}
+
+
+/* ---------- 14. AI SCANNER PAGE ---------- */
+
+/* An attribute selector (Advanced HTML & CSS guide, section 2.2):
+   it styles only the <input> tags whose type is "file" */
+input[type="file"] {
+    color: #dbe2ee;
+}
+
+/* The radio buttons and their text sit on one line, in normal weight */
+.choice {
+    font-weight: normal;
+}
+
+/* The photo chosen by the visitor */
+.scan-preview {
+    width: 100%;
+    border: 2px solid #1d3f73;
+}
+
+/* The name of each class above its bar */
+.bar-name {
+    margin: 12px 0 4px 0;
+    font-size: 0.95rem;
+}
+
+/* The empty track of a bar, and the coloured part whose width JavaScript changes */
+.bar-track {
+    background-color: #172847;
+    height: 18px;
+    width: 90%;
+}
+
+/* The coloured part of the bar; JavaScript changes its width (style.width) to the probability */
+.bar-fill {
+    background-color: #f5b700;
+    height: 18px;
+    width: 0%;
+}
+
+/* The second bar is grey, so the two classes are easy to tell apart */
+.bar-fill-grey {
+    background-color: #8e9bb5;
+}
+
+
+/* ---------- 15. ENGAGED LOOK: GOLD ACCENT AND DIAGONAL HEADER ---------- */
+/* These rules come last, so they replace the earlier ones for the same elements. */
+
+/* The diagonal header: a linear-gradient (CSS guide, section 4.4) whose two colours
+   meet at the same point (52%), so the line between them is sharp instead of blurred.
+   115deg tilts that line, which cuts the header in two: gold on the left, night blue on the right. */
+header {
+    background-image: linear-gradient(115deg, #f5b700 0%, #f5b700 52%, #0a1428 52%, #0a1428 100%);
+    text-align: left;
+    padding: 30px 60px 24px 60px;
+    color: #0a1428;
+}
+
+/* The logo sits directly on the gold half of the header, without a frame */
+.logo-image {
+    margin: 0 0 10px 0;
+    border: none;
+}
+
+/* text-transform: uppercase writes the text in capitals;
+   letter-spacing adds space between the letters, like on a poster */
+.logo {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 3.4rem;
+}
+
+.tagline {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #0a1428;
+}
+
+/* Section titles in capitals, with a thick gold bar on the left */
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 2.1rem;
+    border-left: 8px solid #f5b700;
+    padding-left: 14px;
+}
+
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* The hero block is aligned on the left, with a thick gold bar */
+.hero {
+    border-left: 10px solid #f5b700;
+    text-align: left;
+    padding-left: 40px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    border-left: none;
+    padding-left: 0;
+}
+
+.hero .button {
+    margin: 10px 0;
+}
+
+/* Gold buttons with dark text */
+.button, .button:link, .button:visited {
+    background-color: #f5b700;
+    border: 2px solid #f5b700;
+    color: #0a1428;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: #d99f00;
+    border: 2px solid #d99f00;
+    color: #0a1428;
+}
+
+/* The second button is only outlined in gold */
+.button-light, .button-light:link, .button-light:visited {
+    background-color: transparent;
+    border: 2px solid #f5b700;
+    color: #f5b700;
+}
+
+.button-light:hover {
+    background-color: #f5b700;
+    border: 2px solid #f5b700;
+    color: #0a1428;
+}
+
+.button-small {
+    background-color: #f5b700;
+    color: #0a1428;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button-small:hover {
+    background-color: #d99f00;
+}
+
+/* Tabs in small capitals; Arial keeps the 11 tabs on one line */
+#navigation a {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#navigation .current:link, #navigation .current:visited {
+    color: #f5b700;
+}
+
+/* A gold line on top of every card, and gold prices and numbers */
+.card {
+    border-top: 4px solid #f5b700;
+}
+
+.price, .stat-number {
+    color: #f5b700;
+}
+
+footer {
+    border-top: 4px solid #f5b700;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
