@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
+<html lang="en">
+    <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecowear - Founders</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+
+    <body>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html" class="active">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Meet the Founders</h1>
+<p class="page-intro">Three former classmates from emlyon business school, each holding a different part of Ecowear accountable.</p>
+
+<div class="profile-float">
+  <div class="avatar avatar-1">CL</div>
+  <h3>Camille Laurent</h3>
+  <p>In charge of brand identity and audit standards at Ecowear. Her mission is making sure every certificate accurately reflects what was actually verified.</p>
+</div>
+<div class="profile-float">
+  <div class="avatar avatar-2">SM</div>
+  <h3>Shamista Mehta</h3>
+  <p>Leads data integrity and supply-chain audits. Her core conviction: tangible data is crucial to support any sustainability claim.</p>
+</div>
+<div class="profile-float">
+  <div class="avatar avatar-3">SZ</div>
+  <h3>Shujuan Zhang</h3>
+  <p>Leads UX design and certificate credibility. She asks whether every visual choice on the site is backed by structural evidence, or merely performing it.</p>
+</div>
+</section>
+
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
+    </body>
+</html>

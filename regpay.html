@@ -1,130 +1,135 @@
 <!DOCTYPE html>
-<!-- The head, header, tabs and footer are the same on every page: their comments are in index.html -->
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
 <html lang="en">
     <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EcoWear - Register &amp; Pay</title>
+        <title>Ecowear - Register &amp; Pay</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="myscripts.js" defer></script>
     </head>
+
     <body>
-        <header>
-            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
-            <h1 class="logo">EcoWear</h1>
-            <p class="tagline">The label for independent eco-creators</p>
-        </header>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html" class="active">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-        <div class="nav-bar">
-            <ul id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="label.html">Our Label</a></li>
-                <li><a href="scanner.html">AI Scanner</a></li>
-                <li><a href="creators.html">Creators</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="certification.html">Get Certified</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="regpay.html" class="current">Register &amp; Pay</a></li>
-            </ul>
-        </div>
+<section>
+<h1>Registration &amp; Payment</h1>
+<p class="page-intro">One account for everyone on Ecowear: customers who buy certified garments, and brands that apply for our certificate. Then pay for your order, or for your audit, in the second form.</p>
 
-        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
-        <div class="content">
+<!-- Two forms side by side (.regpay-grid uses display: flex) -->
+<div class="regpay-grid">
+<div>
+<h2>Create Your Account</h2>
+<!-- Button 1: "Register" calls registerUser() in myscripts.js -->
+<form id="registrationForm" onsubmit="return registerUser()">
+  <div class="form-field">
+    <label for="accountType">I am</label>
+    <select id="accountType">
+      <option value="">Choose...</option>
+      <option value="customer">A customer</option>
+      <option value="brand">A brand applying for certification</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="fullName">Full name</label>
+    <input type="text" id="fullName">
+  </div>
+  <div class="form-field">
+    <label for="email">Email address</label>
+    <input type="email" id="email">
+  </div>
+  <div class="form-field">
+    <label for="brandName">Brand name (brands only)</label>
+    <input type="text" id="brandName">
+  </div>
+  <div class="form-field">
+    <label for="material">Main textile to certify (brands only)</label>
+    <select id="material">
+      <option>Organic cotton</option>
+      <option>Recycled fibres</option>
+      <option>Linen</option>
+      <option>Hemp</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-field checkbox-field">
+    <input type="checkbox" id="updates">
+    <label for="updates">Keep me updated by email</label>
+  </div>
+  <input type="submit" value="Register">
+</form>
+<p id="registrationResult" class="message"></p>
+</div>
 
-            <h2>Register &amp; pay</h2>
-            <p>One account for everyone on EcoWear: customers, independent creators and auditors. Customers can pay for pieces from certified creators on the right.</p>
+<div>
+<h2>Pay for Your Order</h2>
+<p class="demo-note">Demo only: no real payment is taken.</p>
+<!-- Button 2: "Check my total" calls showTotal(); button 3: "Pay now" calls payNow() -->
+<form id="paymentForm" onsubmit="return payNow()">
+  <div class="form-field">
+    <label for="payName">Your name</label>
+    <input type="text" id="payName">
+  </div>
+  <div class="form-field">
+    <label for="payItem">What are you paying for?</label>
+    <select id="payItem">
+      <option value="sweater">Organic Cotton Sweater, Maison Verte (&euro;89)</option>
+      <option value="jacket">Patchwork Denim Jacket, Atelier Fil &amp; Trame (&euro;135)</option>
+      <option value="overshirt">Undyed Linen Overshirt, Nord Textile Co. (&euro;79)</option>
+      <option value="pouch">Offcut Zip Pouch, Atelier Fil &amp; Trame (&euro;29)</option>
+      <option value="audit">Ecowear audit for brands, per product line (&euro;250)</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="payQuantity">Quantity (garments or product lines)</label>
+    <input type="number" id="payQuantity" min="1" value="1">
+  </div>
+  <div class="form-field">
+    <label for="payDelivery">Delivery</label>
+    <select id="payDelivery">
+      <option value="4.9">Delivery by post (&euro;4.90)</option>
+      <option value="0">Pick-up at our Lyon office (free)</option>
+    </select>
+  </div>
+  <p class="small-note">3 garments or more: 10% off the garments.</p>
+  <input type="button" value="Check my total" onclick="showTotal()">
+  <input type="submit" value="Pay now">
+</form>
+<p id="paymentResult" class="message"></p>
+</div>
+</div>
+</section>
 
-            <!-- A row of floating columns (see .row and .column-... in style.css) -->
-            <div class="row">
-                <!-- ===== LEFT COLUMN: REGISTRATION FORM (JavaScript: registerUser) ===== -->
-                <div class="column-2 form-box">
-                    <h3>Create your account</h3>
-                    <form id="registerForm" onsubmit="return registerUser()">
-                        <label for="regName">Full name:</label><br>
-                        <input type="text" id="regName" class="field"><br>
-
-                        <label for="regEmail">Email:</label><br>
-                        <input type="text" id="regEmail" class="field"><br>
-
-                        <!-- The three kinds of users of our platform -->
-                        <label for="regType">I am joining as:</label><br>
-                        <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                        <select id="regType" class="field">
-                            <option value="">Choose an account type</option>
-                            <option value="customer">a customer</option>
-                            <option value="creator">an independent creator</option>
-                            <option value="auditor">an auditor</option>
-                        </select><br>
-
-                        <!-- type="password" hides the characters as they are typed -->
-                        <label for="regPassword">Password:</label><br>
-                        <!-- A password box: the letters are hidden (Advanced HTML guide, section 1.4.2) -->
-                        <input type="password" id="regPassword" class="field"><br>
-
-                        <label for="regConfirm">Confirm your password:</label><br>
-                        <!-- A password box: the letters are hidden (Advanced HTML guide, section 1.4.2) -->
-                        <input type="password" id="regConfirm" class="field"><br>
-
-                        <input type="submit" value="Register" class="button">
-                    </form>
-                    <!-- JavaScript writes the confirmation or the error message here -->
-                    <p id="registerResult" class="message"></p>
-                </div>
-
-                <!-- ===== RIGHT COLUMN: PAYMENT FORM (JavaScript: showTotal and payNow) ===== -->
-                <div class="column-2 form-box">
-                    <h3>Pay for your order</h3>
-                    <p class="demo-note">Demo only: no real payment is taken. Please do not enter real card details.</p>
-                    <form id="payForm" onsubmit="return payNow()">
-                        <!-- The value of each option tells JavaScript which piece was chosen; the prices are in myscripts.js -->
-                        <label for="payPiece">Piece:</label><br>
-                        <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                        <select id="payPiece" class="field">
-                            <option value="cuff">Sea-Glass Wire Cuff - €35</option>
-                            <option value="pouch">Patchwork Pouch - €29</option>
-                            <option value="jacket">Second-Life Denim Jacket - €140</option>
-                            <option value="shirt">Linen Summer Shirt - €95</option>
-                            <option value="tshirt">Organic Cotton Tee - €38</option>
-                            <option value="sweater">Recycled Wool Sweater - €110</option>
-                        </select><br>
-
-                        <label for="payQuantity">Quantity:</label><br>
-                        <!-- A number box: only numbers can be typed -->
-                        <input type="number" id="payQuantity" class="field" min="1" value="1"><br>
-
-                        <!-- The value of each option is the delivery cost in euros -->
-                        <label for="payDelivery">Delivery by the creator:</label><br>
-                        <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                        <select id="payDelivery" class="field">
-                            <option value="4.9">Parcel to your home - €4.90</option>
-                            <option value="0">Pick-up at our Lyon pop-up market - free</option>
-                        </select><br>
-
-                        <label for="payCode">Discount code (new customers get one when they register):</label><br>
-                        <input type="text" id="payCode" class="field"><br>
-
-                        <label for="cardName">Name on card:</label><br>
-                        <input type="text" id="cardName" class="field"><br>
-
-                        <label for="cardNumber">Card number:</label><br>
-                        <input type="text" id="cardNumber" class="field"><br>
-
-                        <!-- Button 1: only shows the total (onclick) -->
-                        <button type="button" class="button button-light" onclick="showTotal()">Check my total</button>
-                        <!-- Button 2: submits the form, which runs payNow() -->
-                        <input type="submit" value="Pay now" class="button">
-                    </form>
-                    <!-- JavaScript writes the total or the confirmation here -->
-                    <p id="payResult" class="message"></p>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
-        </footer>
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
     </body>
 </html>

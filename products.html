@@ -1,247 +1,222 @@
 <!DOCTYPE html>
-<!-- The head, header, tabs and footer are the same on every page: their comments are in index.html -->
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
 <html lang="en">
     <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EcoWear - Products</title>
+        <title>Ecowear - Products</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="myscripts.js" defer></script>
     </head>
+
     <body>
-        <header>
-            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
-            <h1 class="logo">EcoWear</h1>
-            <p class="tagline">The label for independent eco-creators</p>
-        </header>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-        <div class="nav-bar">
-            <ul id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="label.html">Our Label</a></li>
-                <li><a href="scanner.html">AI Scanner</a></li>
-                <li><a href="creators.html">Creators</a></li>
-                <li><a href="products.html" class="current">Products</a></li>
-                <li><a href="certification.html">Get Certified</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="regpay.html">Register &amp; Pay</a></li>
-            </ul>
-        </div>
+<section>
+<h1>Products</h1>
+<p class="page-intro">Ecowear does not make clothes: we certify them. Every garment below is made by an independent brand that passed our three audits, and you can buy it directly through Ecowear. Each card tells you what the garment is made of, where it was made and which certificate it carries.</p>
 
-        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
-        <div class="content">
+<!-- ===== 1. The range of certified garments (cards side by side, thanks to display: flex) ===== -->
+<h2>Certified Garments</h2>
+<div class="product-grid">
+  <div class="product-card">
+    <span class="cert-badge">Certified</span>
+    <img src="images/sweater.jpg" alt="A grey sweater knitted in organic cotton, folded on a wooden stool" class="product-photo">
+    <h3>Organic Cotton Sweater</h3>
+    <p class="brand-name">Maison Verte &middot; Lyon</p>
+    <p class="price">&euro;89</p>
+    <!-- Eco facts: what makes the piece sustainable -->
+    <ul class="eco-facts">
+      <li>100% organic cotton, grown without synthetic pesticides</li>
+      <li>Knitted in Lyon, 0 km of air freight</li>
+      <li>Certificate EW-24-002</li>
+    </ul>
+    <a href="#profile-sweater" class="card-link">Supply chain profile &darr;</a>
+  </div>
+  <div class="product-card">
+    <span class="cert-badge">Certified</span>
+    <img src="images/jacket.jpg" alt="A patchwork denim jacket on a hanger" class="product-photo">
+    <h3>Patchwork Denim Jacket</h3>
+    <p class="brand-name">Atelier Fil &amp; Trame &middot; Roubaix</p>
+    <p class="price">&euro;135</p>
+    <ul class="eco-facts">
+      <li>Recycled cotton denim, cut from collected jeans</li>
+      <li>No new dye: the colours come from the old jeans</li>
+      <li>Certificate EW-24-005</li>
+    </ul>
+    <a href="#profile-jacket" class="card-link">Supply chain profile &darr;</a>
+  </div>
+  <div class="product-card">
+    <span class="cert-badge">Certified</span>
+    <img src="images/shirt.jpg" alt="An undyed linen overshirt on a hanger" class="product-photo">
+    <h3>Undyed Linen Overshirt</h3>
+    <p class="brand-name">Nord Textile Co. &middot; Lille</p>
+    <p class="price">&euro;79</p>
+    <ul class="eco-facts">
+      <li>European flax, grown with rain water only</li>
+      <li>Left undyed: no dyeing wastewater at all</li>
+      <li>Certificate EW-25-009</li>
+    </ul>
+    <a href="#profile-overshirt" class="card-link">Supply chain profile &darr;</a>
+  </div>
+  <div class="product-card">
+    <span class="cert-badge">Certified</span>
+    <img src="images/pouch.jpg" alt="A zipped pouch sewn from denim and printed cotton offcuts" class="product-photo">
+    <h3>Offcut Zip Pouch</h3>
+    <p class="brand-name">Atelier Fil &amp; Trame &middot; Roubaix</p>
+    <p class="price">&euro;29</p>
+    <ul class="eco-facts">
+      <li>Sewn from denim and printed-cotton offcuts</li>
+      <li>Uses fabric that would otherwise be thrown away</li>
+      <li>Certificate EW-24-005</li>
+    </ul>
+    <a href="regpay.html" class="card-link">Buy this piece &rarr;</a>
+  </div>
+</div>
+<p>Ready to buy? Choose your piece on the <a href="regpay.html">Register &amp; Pay</a> page.</p>
 
-            <!-- ===== 1. PIECES FROM CERTIFIED CREATORS ===== -->
-            <h2>Pieces from certified creators</h2>
-            <p>Every piece below is made by a creator who carries the EcoWear label. The creator ships it to you, and the certificate number on each card lets you check the label. Click "Quick facts" to see what each piece is made of.</p>
+<!-- ===== 2. Supply chain profiles: where and how three of the garments were made ===== -->
+<h2>Supply Chain Profiles</h2>
+<p>Our auditors follow each certified garment from the fibre to your wardrobe. Here are three of those journeys.</p>
 
-            <!-- Two rows of three product cards. <br> keeps every title on two lines, so the cards line up -->
-            <div class="row">
-                <div class="column-3 card">
-                    <!-- Photo of the piece; the class product-image makes it as wide as its card -->
-                    <img src="images/cuff.jpg" alt="Bracelets made from recovered copper wire, sea glass and leather" class="product-image">
-                    <h3>Sea-Glass<br>Wire Cuff</h3>
-                    <p class="designer">by Shoreline Studio, Marseille</p>
-                    <p class="price">€35</p>
-                    <p>Wrapped by hand from recovered copper wire, sea glass and leather offcuts.</p>
-                    <p class="footprint">Made from recovered materials only</p>
-                    <!-- The status of the label, as a small coloured tag -->
-                    <p><span class="tag tag-certified">Certified · EW-2026-011</span></p>
-                    <!-- Clicking runs toggleDetails(), which shows or hides the element whose id is in the brackets -->
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-cuff')">Quick facts</button>
-                    <!-- Hidden at first: the class hidden is removed by JavaScript when the button is clicked -->
-                    <ul id="facts-cuff" class="hidden facts">
-                        <li>Materials: recovered copper wire, sea glass and leather offcuts</li>
-                        <li>Made in: Marseille, one piece at a time</li>
-                        <li>Packaging: recycled cardboard, no plastic</li>
-                        <li>Repair: free re-wrapping for life</li>
-                    </ul>
-                </div>
-                <div class="column-3 card">
-                    <img src="images/pouch.jpg" alt="A zipped pouch sewn from printed-cotton offcuts" class="product-image">
-                    <h3>Patchwork<br>Pouch</h3>
-                    <p class="designer">by Studio Retaille, Lyon</p>
-                    <p class="price">€29</p>
-                    <p>A zipped pouch sewn from the printed-cotton offcuts of Lyon workshops.</p>
-                    <p class="footprint">Made from offcuts: no new fabric</p>
-                    <p><span class="tag tag-certified">Certified · EW-2026-014</span></p>
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-pouch')">Quick facts</button>
-                    <ul id="facts-pouch" class="hidden facts">
-                        <li>Materials: cotton offcuts and a deadstock zip</li>
-                        <li>Made in: Lyon, Croix-Rousse</li>
-                        <li>Packaging: a reused paper bag</li>
-                        <li>End of life: send it back, we reuse the fabric</li>
-                    </ul>
-                </div>
-                <div class="column-3 card">
-                    <img src="images/jacket.jpg" alt="A denim jacket made from old jeans" class="product-image">
-                    <h3>Second-Life<br>Denim Jacket</h3>
-                    <p class="designer">by Indigo Second, Lyon</p>
-                    <p class="price">€140</p>
-                    <p>Cut from five pairs of old jeans collected in Lyon.</p>
-                    <p class="footprint">Made from old jeans: no new fabric</p>
-                    <p><span class="tag tag-certified">Certified · EW-2026-003</span></p>
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-jacket')">Quick facts</button>
-                    <ul id="facts-jacket" class="hidden facts">
-                        <li>Materials: five pairs of old jeans</li>
-                        <li>Made in: Lyon</li>
-                        <li>Repair: free repairs for two years</li>
-                        <li>End of life: taken back by the creator</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- A row of floating columns (see .row and .column-... in style.css) -->
-            <div class="row">
-                <div class="column-3 card">
-                    <img src="images/shirt.jpg" alt="An undyed linen shirt" class="product-image">
-                    <h3>Linen<br>Summer Shirt</h3>
-                    <p class="designer">by Northern Linen, Lille</p>
-                    <p class="price">€95</p>
-                    <p>Undyed European linen, light and breathable.</p>
-                    <p class="footprint">Footprint: about 8.4 kg CO2e (estimate)</p>
-                    <p><span class="tag tag-certified">Certified · EW-2026-008</span></p>
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-shirt')">Quick facts</button>
-                    <ul id="facts-shirt" class="hidden facts">
-                        <li>Materials: European linen, no dye</li>
-                        <li>Made in: Lille</li>
-                        <li>Care: wash at 30°C, dry in the air</li>
-                        <li>Repair: spare buttons sewn inside</li>
-                    </ul>
-                </div>
-                <div class="column-3 card">
-                    <img src="images/ecowear-label-4.jpg" alt="A T-shirt in organic cotton, with the EcoWear label sewn inside the collar" class="product-image">
-                    <h3>Organic<br>Cotton Tee</h3>
-                    <p class="designer">by Fair Cotton, Nantes</p>
-                    <p class="price">€38</p>
-                    <p>A soft T-shirt in organic cotton, made in small batches.</p>
-                    <p class="footprint">Footprint: about 4.2 kg CO2e (estimate)</p>
-                    <p><span class="tag tag-certified">Certified · EW-2026-019</span></p>
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-tshirt')">Quick facts</button>
-                    <ul id="facts-tshirt" class="hidden facts">
-                        <li>Materials: 100% organic cotton</li>
-                        <li>Made in: Nantes, in batches of 50</li>
-                        <li>Packaging: no plastic</li>
-                        <li>End of life: taken back for recycling</li>
-                    </ul>
-                </div>
-                <div class="column-3 card">
-                    <img src="images/sweater.jpg" alt="A sweater knitted from recycled wool" class="product-image">
-                    <h3>Recycled<br>Wool Sweater</h3>
-                    <p class="designer">by True Wool, Annecy</p>
-                    <p class="price">€110</p>
-                    <p>Knitted from recycled wool, sorted by color so that no new dye is needed.</p>
-                    <p class="footprint">Footprint: about 8.4 kg CO2e (estimate)</p>
-                    <p><span class="tag tag-certified">Certified · EW-2026-006</span></p>
-                    <button type="button" class="button-small" onclick="toggleDetails('facts-sweater')">Quick facts</button>
-                    <ul id="facts-sweater" class="hidden facts">
-                        <li>Materials: recycled wool</li>
-                        <li>Made in: Annecy</li>
-                        <li>Care: hand wash, dry flat</li>
-                        <li>Repair: holes mended for free</li>
-                    </ul>
-                </div>
-            </div>
+<!-- id="profile-..." lets the links on the cards above jump straight to each profile -->
+<div class="supply-profile" id="profile-sweater">
+  <h3>Organic Cotton Sweater &middot; Maison Verte</h3>
+  <ol>
+    <li><strong>Fibre:</strong> organic cotton from a certified cooperative in Aydın, Turkey, rain-fed and grown without synthetic pesticides.</li>
+    <li><strong>Spinning:</strong> spun in Biella, Italy; the batch number follows the yarn so that it is never mixed with uncertified cotton.</li>
+    <li><strong>Knitting and finishing:</strong> knitted in the Lyon workshop of Maison Verte, one of its two French workshops, by four knitters paid above the regional living wage.</li>
+    <li><strong>Transport:</strong> by truck and train only, about 3,100 km from the field to Lyon.</li>
+  </ol>
+  <p class="profile-summary">Audits passed: material, fair wage, carbon &middot; Certificate EW-24-002, valid until March 2027</p>
+</div>
 
-            <!-- ===== 2. SUPPLY CHAIN PROFILES ===== -->
-            <h2>Supply chain profiles</h2>
-            <p>What the auditor checked for three of our pieces, stage by stage.</p>
+<div class="supply-profile" id="profile-jacket">
+  <h3>Patchwork Denim Jacket &middot; Atelier Fil &amp; Trame</h3>
+  <ol>
+    <li><strong>Fibre:</strong> used jeans collected by a social enterprise in northern France that sorts donated clothes.</li>
+    <li><strong>Preparation:</strong> each pair is washed, unstitched and sorted by shade in Roubaix, 15 km from the collection centre.</li>
+    <li><strong>Making:</strong> cut and sewn in the atelier in Roubaix; every jacket is unique because the patches never match twice.</li>
+    <li><strong>Transport:</strong> about 230 km by truck to our Lyon pick-up point.</li>
+  </ol>
+  <p class="profile-summary">Audits passed: material, fair wage, carbon &middot; Certificate EW-24-005, valid until June 2027</p>
+</div>
 
-            <!-- Profile 1: an ordered list, because the stages happen in order -->
-            <article class="profile">
-                <h3>Second-Life Denim Jacket · Indigo Second</h3>
-                <!-- An ordered list: the steps are numbered -->
-                <ol class="journey">
-                    <li><span class="bold">Collection:</span> old jeans given by Lyon residents and by a second-hand shop.</li>
-                    <li><span class="bold">Sorting and washing:</span> sorted by shade and washed in a laundry in Villeurbanne.</li>
-                    <li><span class="bold">Cutting and sewing:</span> five pairs of jeans for each jacket, cut and sewn in the creator's Lyon workshop.</li>
-                    <li><span class="bold">Packaging and delivery:</span> reused boxes, by bike courier in Lyon or by parcel.</li>
-                    <li><span class="bold">After the sale:</span> free repairs for two years, and old jackets taken back.</li>
-                </ol>
-                <p class="profile-summary">Lyon · no new fabric · last audit September 2026 · score 26/30 · EW-2026-003</p>
-            </article>
+<div class="supply-profile" id="profile-overshirt">
+  <h3>Undyed Linen Overshirt &middot; Nord Textile Co.</h3>
+  <ol>
+    <li><strong>Fibre:</strong> flax grown in Normandy, which needs no irrigation and very little fertiliser.</li>
+    <li><strong>Spinning and weaving:</strong> spun and woven in northern France, and left in its natural colour.</li>
+    <li><strong>Making:</strong> sewn in one of Nord Textile Co.'s three partner workshops near Lille, each audited for fair wages.</li>
+    <li><strong>Transport:</strong> about 690 km by truck from Normandy to Lyon, through Lille.</li>
+  </ol>
+  <p class="profile-summary">Audits passed: material, fair wage, carbon &middot; Certificate EW-25-009, valid until September 2027</p>
+</div>
 
-            <!-- Profile 2 -->
-            <article class="profile">
-                <h3>Linen Summer Shirt · Northern Linen</h3>
-                <ol class="journey">
-                    <li><span class="bold">Fiber:</span> flax grown in Normandy, where rain is enough to water it.</li>
-                    <li><span class="bold">Spinning and weaving:</span> in a linen mill in Lithuania.</li>
-                    <li><span class="bold">Dyeing:</span> none. The shirt keeps the natural color of flax.</li>
-                    <li><span class="bold">Sewing:</span> in the creator's workshop in Lille.</li>
-                    <li><span class="bold">Delivery:</span> by parcel, in recycled cardboard.</li>
-                </ol>
-                <p class="profile-summary">Normandy, Lithuania, Lille · last audit October 2026 · score 22/30 · EW-2026-008</p>
-            </article>
+<!-- ===== 3. The certificates Ecowear sells to brands (Joseph's original cards) ===== -->
+<h2>Our Certification Services</h2>
+<p>Every certificate covers three things: the material itself, the wages paid to make it, and the carbon cost of getting it to a customer. A brand only gets to display the Ecowear mark once all three have been checked and documented.</p>
+<div class="product-grid">
+  <div class="product-card">
+    <span class="cert-badge">Audit</span>
+    <div class="product-photos">
+      <img src="cotton-plant.png" alt="Cotton boll ready for harvest at a certified farm" class="product-photo">
+      <img src="organic-cotton-tag.png" alt="100% organic cotton garment tag" class="product-photo">
+    </div>
+    <h3>Material Verification &mdash; Organic Cotton</h3>
+    <p>Our flagship audit. We trace a batch of organic cotton from the certified farm to the finished garment, checking for pesticide-free growing, low-impact dyes, and a documented chain of custody at every step.</p>
+    <a href="material-verification.html" class="card-link">See the full audit profile &rarr;</a>
+  </div>
+  <div class="product-card">
+    <span class="cert-badge">Audit</span>
+    <h3>Fair-Wage Audit</h3>
+    <p>We review payroll records and interview workers across a brand's supply chain, comparing pay against regional living-wage benchmarks. A certificate is only issued once every workshop in the chain clears the bar.</p>
+    <a href="fair-wage-audit.html" class="card-link">See the full audit profile &rarr;</a>
+  </div>
+  <div class="product-card">
+    <span class="cert-badge">Audit</span>
+    <h3>Carbon &amp; Transparency Report</h3>
+    <p>Using the same metrics as our carbon calculator below, we estimate and publish the footprint of a certified collection, so a brand's customers can see the real number, not a rounded-up guess.</p>
+    <a href="carbon-report.html" class="card-link">See the full report profile &rarr;</a>
+  </div>
+</div>
+<p>Each audit costs &euro;250 per product line. Brands can register and pay on the <a href="regpay.html">Register &amp; Pay</a> page.</p>
 
-            <!-- Profile 3 -->
-            <article class="profile">
-                <h3>Patchwork Pouch · Studio Retaille</h3>
-                <ol class="journey">
-                    <li><span class="bold">Fabric:</span> printed-cotton offcuts collected from three textile workshops in Lyon.</li>
-                    <li><span class="bold">Zip:</span> deadstock zips bought from a haberdasher that closed down.</li>
-                    <li><span class="bold">Sewing:</span> in the creator's studio in the Croix-Rousse district of Lyon.</li>
-                    <li><span class="bold">After the sale:</span> worn pouches taken back, and their fabric reused.</li>
-                </ol>
-                <p class="profile-summary">Lyon · offcuts only · last audit November 2026 · score 23/30 · EW-2026-014</p>
-            </article>
+<!-- ===== 4. Carbon footprint calculator: calculateCarbon() in myscripts.js ===== -->
+<h2>Carbon Calculator</h2>
+<p>Compare the footprint of an order made with certified materials with the same order made with conventional new materials.</p>
+<div id="calculator">
+  <h2>Carbon calculator</h2>
+  <form id="carbonForm" onsubmit="return calculateCarbon()">
+    <!-- The value of each option tells JavaScript which garment was chosen -->
+    <label for="garment">Garment:</label>
+    <select id="garment">
+      <option value="tshirt">T-shirt</option>
+      <option value="shirt">Shirt or overshirt</option>
+      <option value="sweater">Sweater</option>
+      <option value="sweatshirt">Sweatshirt</option>
+    </select>
+    <br>
+    <!-- The value of each option is the share of the conventional footprint that remains -->
+    <label for="material">Material:</label>
+    <select id="material">
+      <option value="1">Conventional new material</option>
+      <option value="0.7">Organic or recycled fibres</option>
+      <option value="0.2">Upcycled fabric or offcuts</option>
+    </select>
+    <br>
+    <label for="garments">Number of garments:</label>
+    <input type="number" id="garments" min="1" value="1">
+    <br>
+    <label for="distance">Distance travelled (km):</label>
+    <input type="number" id="distance" min="1" value="500">
+    <br>
+    <input type="submit" value="Calculate">
+  </form>
+  <!-- JavaScript writes the result in this empty paragraph -->
+  <p id="result"></p>
+</div>
 
-            <!-- ===== 3. CARBON FOOTPRINT CALCULATOR (JavaScript: calculateCarbon) ===== -->
-            <!-- An id is used here because the calculator is one of a kind on the page -->
-            <div id="calculator">
-                <h2>Carbon footprint calculator</h2>
-                <p>Choose a garment, the kind of material the creator uses, a quantity and the distance it travels to you. We compare your order with the same garments made from conventional new materials.</p>
-                <!-- onsubmit runs calculateCarbon() when the visitor clicks "Calculate" -->
-                <form id="carbonForm" onsubmit="return calculateCarbon()">
-                    <!-- The value of each option tells JavaScript which garment was chosen -->
-                    <label for="garment">Garment:</label>
-                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                    <select id="garment" class="field">
-                        <option value="tshirt">T-shirt</option>
-                        <option value="shirt">Shirt</option>
-                        <option value="sweater">Sweater</option>
-                        <option value="sweatshirt">Sweatshirt</option>
-                    </select>
-                    <br>
-                    <!-- The value of each option is the share of the conventional footprint that remains -->
-                    <label for="material">Material:</label>
-                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                    <select id="material" class="field">
-                        <option value="1">Conventional new material</option>
-                        <option value="0.7">Organic or recycled fibers</option>
-                        <option value="0.2">Upcycled or deadstock fabric</option>
-                    </select>
-                    <br>
-                    <label for="quantity">Quantity:</label>
-                    <!-- A number box: only numbers can be typed -->
-                    <input type="number" id="quantity" class="field" min="1" value="1">
-                    <br>
-                    <label for="distance">Distance from the creator to your home (km):</label>
-                    <!-- A number box: only numbers can be typed -->
-                    <input type="number" id="distance" class="field" min="1" value="500">
-                    <br>
-                    <input type="submit" value="Calculate" class="button">
-                </form>
-                <!-- JavaScript writes the result in this empty paragraph -->
-                <p id="result"></p>
-            </div>
+<!-- The metrics behind the calculator, with their sources -->
+<h3>How we calculate</h3>
+<ul class="method">
+  <li><strong>Making the garment.</strong> ADEME, the French agency for ecological transition, estimates that a cotton T-shirt emits about 6 kg of CO2 over its life, a shirt or a cotton sweater about twice as much (12 kg), and a cotton sweatshirt about 30 kg. Source: <a href="https://www.linfodurable.fr/environnement/education-les-tenues-uniques-repondront-elles-des-exigences-ecologiques-43858" target="_blank">L'info durable</a> (in French).</li>
+  <li><strong>Material.</strong> Our estimates: organic or recycled fibres keep 70% of that footprint, and upcycled fabric keeps 20%, because the fabric already exists.</li>
+  <li><strong>Transport.</strong> Weight of the garments (0.2 kg for a T-shirt, 0.3 kg for a shirt, 0.5 kg for a sweater, 0.6 kg for a sweatshirt) &times; distance &times; 0.0675 kg of CO2 per tonne and per km by truck, the ADEME Base Carbone factor. Source: <a href="https://www.banque-france.fr/system/files/2026-07/Methodologie_fret.pdf" target="_blank">Banque de France, freight method</a>.</li>
+</ul>
+<p class="disclaimer">Packaging and end-of-life emissions are not included. Want to see certification in action? Try our <a href="live-check.html">live camera certificate check</a>.</p>
+</section>
 
-            <!-- How we calculate: the metrics behind the calculator -->
-            <div class="method">
-                <h3>How we calculate</h3>
-                <!-- An unordered list (bullet points) -->
-                <ul>
-                    <li><span class="bold">Conventional garments.</span> ADEME, the French agency for ecological transition, estimates that a cotton T-shirt emits about 6 kg of CO2 over its life, a shirt or a cotton sweater about twice as much, and a cotton sweatshirt about 30 kg (source: <a href="https://www.linfodurable.fr/environnement/education-les-tenues-uniques-repondront-elles-des-exigences-ecologiques-43858">L'info durable</a>, in French).</li>
-                    <li><span class="bold">Materials.</span> Our estimates: organic or recycled fibers keep 70% of this footprint, and upcycled or deadstock fabric keeps 20%, because the fabric already exists. Our auditors will refine these figures creator by creator.</li>
-                    <li><span class="bold">Delivery.</span> Weight of the garment (0.2 kg for a T-shirt, 0.3 kg for a shirt, 0.5 kg for a sweater, 0.6 kg for a sweatshirt) x distance x 0.0675 kg CO2e per tonne and per km by truck, the ADEME Base Carbone factor (source: <a href="https://www.banque-france.fr/system/files/2026-07/Methodologie_fret.pdf">Banque de France, freight method</a>).</li>
-                </ul>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
-        </footer>
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
     </body>
 </html>

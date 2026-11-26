@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
+<html lang="en">
+    <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecowear - Fair-Wage Audit</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+
+    <body>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html" class="active">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Fair-Wage Audit</h1>
+<p class="page-intro">Proof that the people who made a garment were paid fairly for it &mdash; not just a line in a sustainability report.</p>
+<p>We review payroll records and interview workers across a brand's supply chain, comparing pay against regional living-wage benchmarks. A certificate is only issued once every workshop in the chain clears the bar.</p>
+
+<h2>How We Audit a Workshop</h2>
+<ol>
+  <li>Collect payroll records for every worker across a full pay cycle.</li>
+  <li>Compare pay against the regional living-wage benchmark for that role.</li>
+  <li>Interview a sample of workers directly, without supervisors present.</li>
+  <li>Re-audit every 12 months to confirm standards are maintained, not just met once.</li>
+</ol>
+<p>In our last audit cycle, we reviewed workshops across three countries. Any workshop that didn't initially meet the benchmark was given 90 days to correct pay before re-audit, rather than being simply failed and dropped.</p>
+</section>
+
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
+    </body>
+</html>

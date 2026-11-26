@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
+<html lang="en">
+    <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecowear - Certified Brands</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+
+    <body>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html" class="active">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Certified Brands</h1>
+<p class="page-intro">Ecowear is the link between brands that pass our audits and the customers who want to trust them. Here are our certified partners, with the certificate number printed on their labels.</p>
+
+<div class="product-grid">
+  <div class="brand-card">
+    <span class="cert-badge">Certified</span>
+    <h3>Maison Verte</h3>
+    <p>Lyon-based knitwear label, certified for organic cotton sourcing and fair-wage production across its two French workshops.</p>
+    <p class="cert-number">Certificate EW-24-002</p>
+    <a href="products.html#profile-sweater" class="card-link">See their sweater &rarr;</a>
+  </div>
+  <div class="brand-card">
+    <span class="cert-badge">Certified</span>
+    <h3>Atelier Fil &amp; Trame</h3>
+    <p>Small-batch denim maker in Roubaix, certified for its full chain of custody on recycled cotton and transparent carbon reporting.</p>
+    <p class="cert-number">Certificate EW-24-005</p>
+    <a href="products.html#profile-jacket" class="card-link">See their jacket &rarr;</a>
+  </div>
+  <div class="brand-card">
+    <span class="cert-badge">Certified</span>
+    <h3>Nord Textile Co.</h3>
+    <p>Outerwear brand certified for fair-wage audits across its three partner workshops in Northern France.</p>
+    <p class="cert-number">Certificate EW-25-009</p>
+    <a href="products.html#profile-overshirt" class="card-link">See their overshirt &rarr;</a>
+  </div>
+</div>
+
+<!-- Certificate check: lookupCertificate() in myscripts.js compares the number with our list -->
+<h2>Check a Certificate</h2>
+<p>Found an Ecowear label on a garment? Type the certificate number printed on it to check that it is genuine and still valid.</p>
+<div class="verifier-box">
+  <form id="certForm" onsubmit="return lookupCertificate()">
+    <div class="form-field">
+      <label for="certNumber">Certificate number (for example EW-24-002)</label>
+      <input type="text" id="certNumber" placeholder="EW-24-002">
+    </div>
+    <input type="submit" value="Check certificate">
+  </form>
+  <p id="certResult" class="message"></p>
+</div>
+
+<p>Is your brand ready to apply? <a href="regpay.html">Start your certification</a>.</p>
+</section>
+
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
+    </body>
+</html>

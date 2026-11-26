@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
+<html lang="en">
+    <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecowear - Material Verification</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+
+    <body>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html" class="active">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Material Verification &mdash; Organic Cotton</h1>
+<p class="page-intro">Our flagship audit, and the one most of our certified brands start with.</p>
+<div class="product-photos">
+  <img src="cotton-plant.png" alt="Cotton boll ready for harvest at a certified farm" class="product-photo">
+  <img src="organic-cotton-tag.png" alt="100% organic cotton garment tag" class="product-photo">
+</div>
+<p>We trace a batch of organic cotton from the certified farm to the finished garment, checking for pesticide-free growing, low-impact dyes, and a documented chain of custody at every step. Cotton that passes carries the Ecowear material mark.</p>
+
+<h2>Chain of Custody</h2>
+<ol>
+  <li><strong>Farm:</strong> certified organic cotton harvested without synthetic pesticides, documented at source.</li>
+  <li><strong>Ginning &amp; spinning:</strong> batch identity preserved, no mixing with uncertified fibre.</li>
+  <li><strong>Dyeing:</strong> low-impact dyes only, with wastewater treatment records checked on site.</li>
+  <li><strong>Garment workshop:</strong> final inspection and labelling with the Ecowear material mark.</li>
+</ol>
+
+<p>See the garments that carry this mark, and their supply chain profiles, on our <a href="products.html">Products</a> page.</p>
+<p>Curious how a brand applies? <a href="regpay.html">Register for certification</a>.</p>
+</section>
+
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
+    </body>
+</html>
