@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
+<html lang="en">
+    <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ecowear - Our Principles</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="myscripts.js" defer></script>
+    </head>
+
+    <body>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html" class="active">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+<h1>Our Principles</h1>
+<p class="page-intro">Five commitments every certified supply chain is checked against before it earns the Ecowear mark.</p>
+<ol>
+  <li class="core">Minimise toxic waste and microfibre pollution</li>
+  <li>Responsible material sourcing</li>
+  <li class="core">Fair wages and safe working conditions</li>
+  <li>Circular practices: repair, recycle, upcycle</li>
+  <li id="transparency">Full transparency on sourcing and impact</li>
+</ol>
+
+<button type="button" onclick="toggleDetails()">Show / hide our principles in detail</button>
+<div id="details" class="hidden">
+  <h3>1. Minimise Toxic Waste and Microfibre Pollution</h3>
+  <p>We certify suppliers only once they can demonstrate compliance with strict chemical safety standards, with documented evidence of proper wastewater treatment and chemical handling throughout production.</p>
+
+  <h3>2. Responsible Material Sourcing</h3>
+  <p>We require certified natural fibres and recycled materials, and a fully documented chain of custody from raw material to finished garment before a certificate is issued.</p>
+
+  <h3>3. Fair Wages and Safe Working Conditions</h3>
+  <p>From raw material sourcing to retail, every certified supply chain is audited against fair labour standards, with safe working conditions and fair pay as non-negotiable requirements, not aspirations.</p>
+
+  <h3>4. Circular Practices</h3>
+  <p>We favour brands that design for longevity, repair, and reuse, so that fewer garments end up discarded and more stay in circulation for years.</p>
+
+  <h3>5. Full Transparency</h3>
+  <p>Every claim behind a certificate &mdash; sourcing, materials, environmental impact &mdash; is backed by data that customers, regulators, or researchers can access and independently verify. A claim without evidence is not transparency, it is just assertion.</p>
+</div>
+</section>
+
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
+    </body>
+</html>

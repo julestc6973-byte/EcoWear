@@ -1,108 +1,60 @@
 <!DOCTYPE html>
-<!-- The head, header, tabs and footer are the same on every page: their comments are in index.html -->
+<!-- Ecowear: independent certification body and platform that links certified fashion brands with the customers who buy from them -->
 <html lang="en">
     <head>
+        <!-- charset displays special characters such as € correctly; viewport fits the page to phone screens -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EcoWear - Contact</title>
+        <title>Ecowear - Contact</title>
+        <!-- One external stylesheet and one external JavaScript file, shared by the 12 pages -->
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="myscripts.js" defer></script>
     </head>
+
     <body>
-        <header>
-            <img src="images/logo.jpg" alt="The EcoWear logo: a leaf inside the letter E" class="logo-image">
-            <h1 class="logo">EcoWear</h1>
-            <p class="tagline">The label for independent eco-creators</p>
-        </header>
+<!-- Navigation bar: the same 12 links on every page, so there is never a dead end.
+     class="active" marks the page that is open. -->
+<nav id="navigation">
+  <a href="index.html" class="logo"><img src="images/ecowear-logo.jpg" alt="Ecowear logo: a leaf inside the letter E"></a>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="principles.html">Principles</a></li>
+    <li><a href="founders.html">Founders</a></li>
+    <li><a href="material-verification.html">Cotton Audit</a></li>
+    <li><a href="fair-wage-audit.html">Fair-Wage Audit</a></li>
+    <li><a href="carbon-report.html">Carbon Report</a></li>
+    <li><a href="live-check.html">Live Check</a></li>
+    <li><a href="brands-directory.html">Certified Brands</a></li>
+    <li><a href="regpay.html">Register &amp; Pay</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
 
-        <div class="nav-bar">
-            <ul id="navigation">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="label.html">Our Label</a></li>
-                <li><a href="scanner.html">AI Scanner</a></li>
-                <li><a href="creators.html">Creators</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="certification.html">Get Certified</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact.html" class="current">Contact</a></li>
-                <li><a href="regpay.html">Register &amp; Pay</a></li>
-            </ul>
-        </div>
+<section>
+<h1>Contact</h1>
+<p class="page-intro">Questions about a certificate, a partnership, or anything else &mdash; we read everything that comes in here.</p>
+<p>Ecowear &middot; Gerland, Lyon, France<br>
+Email: <a href="mailto:hello@ecowear.fr">hello@ecowear.fr</a><br>
+Phone: +33 4 72 00 00 00</p>
 
-        <!-- ===== MAIN CONTENT: the part that changes from page to page ===== -->
-        <div class="content">
+<h2>Find Us</h2>
+<div class="map-wrap">
+  <iframe src="https://www.google.com/maps?q=Gerland,+Lyon,+France&output=embed" height="320" style="border:0;" allowfullscreen loading="lazy"></iframe>
+</div>
+</section>
 
-            <h2>Contact us</h2>
-
-            <!-- A row of floating columns (see .row and .column-... in style.css) -->
-            <div class="row">
-                <!-- Left column: our details (invented for the project) and who answers what -->
-                <div class="column-2">
-                    <h3>Our details</h3>
-                    <p>
-                        <span class="bold">EcoWear SAS</span><br>
-                        144 Av. Jean Jaurès, 69007 Lyon, France<br>
-                        Email: hello@ecowear.example<br>
-                        Phone: +33 4 00 00 00 00<br>
-                        Open Monday to Friday, 9 am to 6 pm
-                    </p>
-                    <h3>Who answers</h3>
-                    <!-- An unordered list (bullet points) -->
-                    <ul>
-                        <li><span class="bold">Criteria, applications and audits:</span> Jules</li>
-                        <li><span class="bold">Fees, payments and partnerships:</span> Josh</li>
-                        <li><span class="bold">Website, directory and stories:</span> Joseph</li>
-                    </ul>
-                </div>
-                <!-- Right column: Google Map embedded with an iframe (HTML guide, section 5.12).
-                     The code comes from Google Maps: Share > Embed a map > Copy HTML.
-                     width and height give the size; the class "map" in style.css stretches it to the column.
-                     loading="lazy" loads the map only when the visitor scrolls to it,
-                     and referrerpolicy tells Google which site the map is shown on. -->
-                <div class="column-2">
-                    <!-- An embedded frame that shows another web page inside ours -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.48915588284!2d4.836400676884343!3d45.74133867107938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ecc1f92a9f33%3A0x19d7ecf50a69094c!2semlyon%20business%20school!5e0!3m2!1sfr!2sfr!4v1795469804303!5m2!1sfr!2sfr" width="600" height="340" class="map" title="Map of EcoWear, 144 Av. Jean Jaurès, 69007 Lyon" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                    <!-- target="_blank" opens Google Maps in a new browser tab, so the visitor does not leave our site -->
-                    <p><a href="https://www.google.com/maps/place/emlyon+business+school/@45.7408907,4.8352318,16.04z/data=!4m6!3m5!1s0x47f4ecc1f92a9f33:0x19d7ecf50a69094c!8m2!3d45.7413387!4d4.8389756!16zL20vMDZxd2Rn" target="_blank">Open the map in Google Maps</a></p>
-                </div>
-            </div>
-
-            <!-- ===== CONTACT FORM (JavaScript: sendMessage) ===== -->
-            <div class="form-box form-wide">
-                <h2>Send us a message</h2>
-                <p>Choose a topic: your message goes straight to the person in charge.</p>
-                <form id="contactForm" onsubmit="return sendMessage()">
-                    <label for="ctName">Your name:</label><br>
-                    <input type="text" id="ctName" class="field"><br>
-
-                    <label for="ctEmail">Your email:</label><br>
-                    <input type="text" id="ctEmail" class="field"><br>
-
-                    <label for="ctTopic">Topic:</label><br>
-                    <!-- A drop-down list: the visitor chooses one option (Advanced HTML guide, section 1.3) -->
-                    <select id="ctTopic" class="field">
-                        <option value="">Choose a topic</option>
-                        <option value="certification">Our criteria, an application or an audit</option>
-                        <option value="fees">Fees, payments or a partnership</option>
-                        <option value="website">The website, the directory or a story</option>
-                        <option value="other">Something else</option>
-                    </select><br>
-
-                    <label for="ctMessage">Your message:</label><br>
-                    <!-- A multiple-line text box for longer messages (Advanced HTML guide, section 1.4.3) -->
-                    <textarea id="ctMessage" class="field" rows="5" cols="40"></textarea><br>
-
-                    <input type="submit" value="Send" class="button">
-                </form>
-                <!-- JavaScript writes the confirmation or the error message here -->
-                <p id="contactResult" class="message"></p>
-            </div>
-        </div>
-
-        <footer>
-            <p>&copy; <span id="year"></span> EcoWear, Lyon, France</p>
-        </footer>
+<!-- Footer: the same on every page. JavaScript writes the current year in the span. -->
+<footer>
+  <p>Ecowear &mdash; <span id="year"></span></p>
+  <p>Gerland, Lyon, France &middot; hello@ecowear.fr &middot; +33 4 72 00 00 00</p>
+  <form id="newsletterForm" class="newsletter-form" onsubmit="return subscribeNewsletter()">
+    <label for="newsletterEmail">Get our transparency updates:</label>
+    <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+    <input type="submit" value="Subscribe">
+  </form>
+  <p id="newsletterResult" class="newsletter-result"></p>
+</footer>
     </body>
 </html>
